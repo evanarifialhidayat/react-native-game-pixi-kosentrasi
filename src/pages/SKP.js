@@ -75,10 +75,10 @@ export default class SKP extends Component<{}>{
   };
 
 _hendleViewBardcode(){
-	//this.setState({  viewBardcode: true, });	 
+	this.setState({  viewBardcode: true, });	 
 }
 componentDidMount() {
-    this._requestCameraPermission();
+  //  this._requestCameraPermission();
    // this.webview.current.focus();
    //this.webview.nipsearch = "evan";
   // Alert.alert(this.webview.nipsearch)
@@ -177,7 +177,7 @@ clearState(){
 
   													   console.log(ceparse.type);	
   													   console.log(ceparse.message);								          	      
-													  // this._hendleViewBardcode();											
+													   this._hendleViewBardcode();											
 												   }
 											  }
 									      />
