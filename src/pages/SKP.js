@@ -78,10 +78,7 @@ _hendleViewBardcode(){
 	this.setState({  viewBardcode: true, });	 
 }
 componentDidMount() {
-  //  this._requestCameraPermission();
-   // this.webview.current.focus();
-   //this.webview.nipsearch = "evan";
-  // Alert.alert(this.webview.nipsearch)
+    this._requestCameraPermission();
   }
 
 styleViewParent = function(options) {	
@@ -107,33 +104,33 @@ clearState(){
 	});
 }
 	render(){
-	//	let Script1 = `
-	//				    document.getElementById("nipsearch").addEventListener("focus", function() {  
-	//				      var data = {
-	//				          type: "1",
-	//				          message : document.getElementById('nipsearch').value
-	//				      };
-	//				      window.postMessage(JSON.stringify(data),"*");						     
-	//				    });	
-//
-//					    document.getElementById("nipsearchbaru").addEventListener("focus", function() {  
-//					      var databaru = {
-//					          type: "2",
-//					          message : document.getElementById('nipsearchbaru').value
-//					      };
-//					      window.postMessage(JSON.stringify(databaru),"*");						     
-//					    });	
-//
-//					    document.getElementById('nipsearch').value = '${this.state.statescan}'; 
-//					    document.getElementById('nipsearchbaru').value = '${this.state.statescannipsearchbaru}';
-//
-//
-//					    if('${this.state.countstate}' === '1'){
-//					    	document.getElementById('nipsearchbaru').focus();
-//					    }else if('${this.state.countstate}' === '2'){
-//					    	document.getElementById('nipsearch').focus();
-//					    }
-//		    `;
+		let Script1 = `
+					    document.getElementById("nipsearch").addEventListener("focus", function() {  
+					      var data = {
+					          type: "1",
+					          message : document.getElementById('nipsearch').value
+					      };
+					      window.postMessage(JSON.stringify(data),"*");						     
+					    });	
+
+					    document.getElementById("nipsearchbaru").addEventListener("focus", function() {  
+					      var databaru = {
+					          type: "2",
+					          message : document.getElementById('nipsearchbaru').value
+					      };
+					      window.postMessage(JSON.stringify(databaru),"*");						     
+					    });	
+
+					    document.getElementById('nipsearch').value = '${this.state.statescan}'; 
+					    document.getElementById('nipsearchbaru').value = '${this.state.statescannipsearchbaru}';
+
+
+					    if('${this.state.countstate}' === '1'){
+					    	document.getElementById('nipsearchbaru').focus();
+					    }else if('${this.state.countstate}' === '2'){
+					    	document.getElementById('nipsearch').focus();
+					    }
+		    `;
 		   
 		return(				   
                <View style={this.styleViewParent()}>
@@ -166,17 +163,14 @@ clearState(){
 										      allowFileAccessFromFileURLs={true}									        
 									         renderLoading={this.ActivityIndicatorLoadingView} 
 									         startInLoadingState={true}  
-									       //  injectedJavaScript={Script1}
+									         injectedJavaScript={Script1}
 									         javaScriptEnabledAndroid={true}
-									        // onNavigationStateChange={ this.onNavigationStateChange.bind(this) }						        
+									         onNavigationStateChange={ this.onNavigationStateChange.bind(this) }						        
 									         onMessage={
 									          	event => 
 									          	   {
 									          	       const ce = event.nativeEvent.data;
-  													   const ceparse = JSON.parse(ce);
-
-  													   console.log(ceparse.type);	
-  													   console.log(ceparse.message);								          	      
+  													   const ceparse = JSON.parse(ce);						          	      
 													   this._hendleViewBardcode();											
 												   }
 											  }
