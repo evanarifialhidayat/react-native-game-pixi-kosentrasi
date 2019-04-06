@@ -1,0 +1,23 @@
+{
+  "presets": ["babel-preset-expo"],
+  "env": {
+    "development": {
+      "plugins": ["transform-react-jsx-source"]
+    }
+  },
+  "plugins": [
+  	[
+  		"module-resolver",{
+  		"root":["./src"],
+  		"alias":{
+  			"@pages"  : "./src/pages",
+  			"@routers": "./src/routers",
+  			"@images": "./src/images",
+  			"@signup": "./src/signup",
+            "@dasbord": "./src/dasbord",
+            "@api": "./src/api",     			
+  		 }
+  	   }
+  	 ]
+  ]
+}
