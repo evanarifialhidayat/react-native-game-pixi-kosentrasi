@@ -9,7 +9,7 @@ const items = [
   { thumbnail: {  uri : require('@images/notes.png'   ) , mulai: 'Spk' ,warna:'#499b86',buuton:'Spk'} },
   { thumbnail: {  uri : require('@images/cutter.png'    ) , mulai: 'Cutter',warna:'#ce3968',buuton:'Cutter'} },
   { thumbnail: {  uri : require('@images/pencil.png'      ) , mulai: 'Pecil',warna:'#a0833b',buuton:'Pecil'} },
-   { thumbnail: {  uri : require('@images/bar-chart.png' ) , mulai: 'Chart' ,warna:'#fe3161',buuton:'Chart'}},
+  { thumbnail: {  uri : require('@images/bar-chart.png' ) , mulai: 'Chart' ,warna:'#fe3161',buuton:'Chart'}},
   { thumbnail: {  uri : require('@images/signaling.png' ) , mulai: 'Keluar' ,warna:'#ac888e',buuton:'Keluar'}}
  
 ];
@@ -56,15 +56,10 @@ export default class Dasbord extends Component {
    }
  
  async _eventLavel(item){
-      if(item === 'Dasbord'){
-         Actions.Login(); 
-      }
       if(item === 'Spk'){
          Actions.SKP(); 
       }   
-      if(item === 'Keluar'){
-         Actions.Login(); 
-      }    
+      
   }
  
  

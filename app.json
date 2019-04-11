@@ -1,8 +1,8 @@
 {
   "expo": {
-  	"name"      : "Desa",
+  	"name"      : "Konsentrasi",
   	"icon"      : "./asset/logo.png",
-  	"slug"      : "Desa",
+  	"slug"      : "Konsentrasi",
     "sdkVersion": "27.0.0",
     "loading"   : {
     			"backgroundColor" : "#99c8ff",
@@ -11,7 +11,7 @@
       "icon": "./asset/logo.png",
     },
     "android"   : {
-      "package" : "com.project.desa",
+      "package" : "com.project.konsentrasi",
       "config"  : {
                   "googleMaps" : {
                     "apiKey" : "AIzaSyBpxloSBAX_j0eGfm-yR50UQoS0CqfwiRo"
