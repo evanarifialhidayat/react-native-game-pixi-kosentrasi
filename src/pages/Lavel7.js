@@ -20,7 +20,7 @@ import Expo, {  AdMobBanner ,
   PublisherBanner,
   AdMobRewarded
 } from 'expo';
-export default class SKP extends Component<{}>{
+export default class Lavel7 extends Component<{}>{
 
 	   constructor(props){
 		    super(props)
@@ -31,12 +31,32 @@ export default class SKP extends Component<{}>{
 		      countstate: '',
 		      statescan:'',
 		      statescannipsearchbaru: '',
-		      urlgame:'http://45.77.45.3:8080/konsentrasi/index.html?widthx='+Dimensions.get('window').width+'&heightx='+(Dimensions.get('window').height - 100),
+		      urlgame:'http://45.77.45.3:8080/konsentrasi/lavel7.html?widthx='+Dimensions.get('window').width+'&heightx='+(Dimensions.get('window').height - 100),
 		    }
 		  }
 
 componentDidMount() {
     Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
+        AdMobInterstitial.setTestDeviceID('EMULATOR');
+        AdMobInterstitial.setAdUnitID('ca-app-pub-5882049283613214/7116574865'); 
+       // AdMobInterstitial.addEventListener('interstitialDidLoad', () => this.ActivityIndicatorLoadingView() ); 
+        AdMobInterstitial.addEventListener('interstitialDidFailToLoad',() => Actions.Lavel8() ); 
+       // AdMobInterstitial.addEventListener('interstitialDidOpen', () => console.log('interstitialDidOpen') );
+        AdMobInterstitial.addEventListener('interstitialDidClose',() =>  Actions.Lavel8() );
+        AdMobInterstitial.addEventListener('interstitialWillLeaveApplication',() => Actions.Lavel8() );
+
+  }
+    componentWillUnmount() {
+        AdMobInterstitial.removeAllListeners();
+    }
+    async showInterstitial() {
+       await AdMobInterstitial.requestAdAsync();
+	   await AdMobInterstitial.showAdAsync();
+    }
+
+  bannerError() {
+    console.log("An error");
+    return;
   }
 
 	backHome(){
@@ -52,13 +72,6 @@ componentDidMount() {
 	      />
 	    );
 	  }
-
-	  			        //<ActionButton buttonColor="rgba(231,76,60,1)">
-//			          <ActionButton.Item buttonColor='#3498db' title="Home" onPress={() => {this.backHome()}}>
-//			             <Image style={styles.avatar}  source={require('@images/house.png')}  style={styles.actionButtonIcon}  />
-//			          </ActionButton.Item>
-//			        </ActionButton>
-
 styleViewParent = function(options) {	
 		if(this.state.viewBardcode === true){
 			return{
@@ -98,6 +111,19 @@ styleViewParent = function(options) {
 									         renderLoading={this.ActivityIndicatorLoadingView} 
 									         startInLoadingState={true}  
 									         javaScriptEnabledAndroid={true}	
+									         onMessage={
+									          	event => 
+									          	   {
+									          	       const ce = event.nativeEvent.data;
+  													   const ceparse = JSON.parse(ce); 
+
+  													   const cee = JSON.stringify(ceparse);  	
+  													   const search = JSON.parse(cee);  													  
+  													   if(search.lavel == 'next'){
+  													   	    this.showInterstitial();
+  													   }													  											
+												    }
+											  }		
 									      />	
 
 					 <AdMobBanner 
@@ -162,10 +188,3 @@ actionButtonIcon: {
     flex:1
   },
 });
-
-
-
-
-// document.querySelector('#ceksukasuka').style.backgroundColor = 'blue'; 
-// 							 document.querySelector('#nipsearch').focus();
-//https://snack.expo.io/Skxzn6-5b

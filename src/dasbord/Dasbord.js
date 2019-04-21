@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import {  StyleSheet,Text,  View,Image , TouchableOpacity,Alert,BackHandler ,ImageBackground } from 'react-native';
+import {  StyleSheet,Text,  View,Image , TouchableOpacity,Alert,BackHandler 
+	,ImageBackground,Dimensions } from 'react-native';
 import Grid from 'react-native-grid-component'; 
-import Expo, {  AdMobBanner , Constants } from 'expo';
-import { Actions } from 'react-native-router-flux';
-import Logo from '@pages/Logo';
 
+import { Actions } from 'react-native-router-flux';
+import Expo, {  AdMobBanner ,
+ Constants ,AdMobInterstitial,
+  PublisherBanner,
+  AdMobRewarded
+} from 'expo';
 const items = [
-  { thumbnail: {  uri : require('@images/notes.png'   ) , mulai: 'Spk' ,warna:'#499b86',buuton:'Spk'} },
-  { thumbnail: {  uri : require('@images/cutter.png'    ) , mulai: 'Cutter',warna:'#ce3968',buuton:'Cutter'} },
-  { thumbnail: {  uri : require('@images/pencil.png'      ) , mulai: 'Pecil',warna:'#a0833b',buuton:'Pecil'} },
-  { thumbnail: {  uri : require('@images/bar-chart.png' ) , mulai: 'Chart' ,warna:'#fe3161',buuton:'Chart'}},
-  { thumbnail: {  uri : require('@images/signaling.png' ) , mulai: 'Keluar' ,warna:'#ac888e',buuton:'Keluar'}}
- 
+  { thumbnail: {  uri : require('@images/circle1.png'   ) , mulai: 'Lavel 1'   ,warna:'#199b01',buuton:'Lavel 1'} },
+  { thumbnail: {  uri : require('@images/circle2.png'   ) , mulai: 'Lavel 2'   ,warna:'#299b02',buuton:'Lavel 2'} },
+  { thumbnail: {  uri : require('@images/circle3.png'   ) , mulai: 'Lavel 3'   ,warna:'#399b03',buuton:'Lavel 3'} },
+  { thumbnail: {  uri : require('@images/circle4.png'   ) , mulai: 'Lavel 4'   ,warna:'#499b04',buuton:'Lavel 4'}},
+  { thumbnail: {  uri : require('@images/circle5.png'   ) , mulai: 'Lavel 5'   ,warna:'#599b05',buuton:'Lavel 5'}},
+  { thumbnail: {  uri : require('@images/circle6.png'   ) , mulai: 'Lavel 6'   ,warna:'#699b06',buuton:'Lavel 6'}},
+  { thumbnail: {  uri : require('@images/circle7.png'   ) , mulai: 'Lavel 7'   ,warna:'#799b07',buuton:'Lavel 7'}},
+  { thumbnail: {  uri : require('@images/circle8.png'   ) , mulai: 'Lavel 8'   ,warna:'#899b08',buuton:'Lavel 8'}} ,
+  { thumbnail: {  uri : require('@images/circle9.png'   ) , mulai: 'Lavel 9'   ,warna:'#799b09',buuton:'Lavel 9'}},
+  { thumbnail: {  uri : require('@images/circle10.png'   ) , mulai: 'Lavel 10' ,warna:'#799b10',buuton:'Lavel 10'}}
 ];
 
 
@@ -50,15 +58,42 @@ export default class Dasbord extends Component {
 						            </View>
                          <View style={{flex:1,backgroundColor: data.thumbnail.warna}}>
                                 <Text style={styles.footButton} >{ data.thumbnail.buuton }</Text>
-                            </View>    
+                         </View>    
             </TouchableOpacity>
           );
    }
  
  async _eventLavel(item){
-      if(item === 'Spk'){
-         Actions.SKP(); 
-      }   
+      if(item === 'Lavel 1'){
+         Actions.Lavel1(); 
+      } 
+      if(item === 'Lavel 2'){
+         Actions.Lavel2(); 
+      } 
+      if(item === 'Lavel 3'){
+         Actions.Lavel3(); 
+      } 
+      if(item === 'Lavel 4'){
+        Actions.Lavel4(); 
+      } 
+      if(item === 'Lavel 5'){
+        Actions.Lavel5(); 
+      } 
+      if(item === 'Lavel 6'){
+        Actions.Lavel6(); 
+      } 
+      if(item === 'Lavel 7'){
+         Actions.Lavel7(); 
+      } 
+      if(item === 'Lavel 8'){
+         Actions.Lavel8(); 
+      } 
+      if(item === 'Lavel 9'){
+         Actions.Lavel9(); 
+      } 
+      if(item === 'Lavel 10'){
+         Actions.Lavel10(); 
+      } 
       
   }
  
@@ -69,10 +104,10 @@ export default class Dasbord extends Component {
     <ImageBackground   style={styles.container} >   
             <View style={styles.headerContent}>             
                     <TouchableOpacity onPress={this.backAndroid}> 
-                      <Image style={styles.avatar}  source={require('@images/kemenlogo.png')}  />
+                      <Image style={styles.avatar}  source={require('@images/logo.png')}  />
                       </TouchableOpacity>
                     <Text style={styles.name}>
-                      Kementrian Desa
+                      Konsentrasi
                     </Text>                
             </View>   
     		       
@@ -81,27 +116,63 @@ export default class Dasbord extends Component {
                 style={styles.list}
                 renderItem={this._renderItem}               
                 data={items}
-                itemsPerRow={4}
+                itemsPerRow={5}
               />
         </View>
+        <AdMobBanner 
+                			style={{ alignItems: 'center',marginTop: 20 }}
+		                  bannerSize="banner"
+		                  adUnitID="ca-app-pub-5882049283613214/8700231224"
+		                  testDeviceID="EMULATOR"
+		                  onDidFailToReceiveAdWithError={this.bannerError} />
+
+         <AdMobBanner 
+                			style={{ alignItems: 'center'}}
+		                  bannerSize="banner"
+		                  adUnitID="ca-app-pub-5882049283613214/8157305740"
+		                  testDeviceID="EMULATOR"
+		                  onDidFailToReceiveAdWithError={this.bannerError} />	
+
+		                  <AdMobBanner 
+                			style={{ alignItems: 'center'}}
+		                  bannerSize="banner"
+		                  adUnitID="ca-app-pub-5882049283613214/4242999513"
+		                  testDeviceID="EMULATOR"
+		                  onDidFailToReceiveAdWithError={this.bannerError} />	
+
+		                  <AdMobBanner 
+                			style={{ alignItems: 'center'}}
+		                  bannerSize="banner"
+		                  adUnitID="ca-app-pub-5882049283613214/3668284445"
+		                  testDeviceID="EMULATOR"
+		                  onDidFailToReceiveAdWithError={this.bannerError} />	
+
+		                  <AdMobBanner 
+                			style={{ alignItems: 'center'}}
+		                  bannerSize="banner"
+		                  adUnitID="ca-app-pub-5882049283613214/9168023137"
+		                  testDeviceID="EMULATOR"
+		                  onDidFailToReceiveAdWithError={this.bannerError} />	
+
      </ImageBackground>
     );
   }
 }
-
+const wi = Dimensions.get('window').width / 3;
+const hi = Dimensions.get('window').height / 6;
 const styles = StyleSheet.create({
   headerContent:{
-    padding:30,
+    padding:10,
     alignItems: 'center',
     backgroundColor: "#01a8a8",
   },
   avatar: {
-    width: 130,
-    height: 130,
-    borderRadius: 63,
-    borderWidth: 4,
+    width: wi,
+    height: hi,
+    borderRadius: 40,
+    borderWidth: 2,
     borderColor: "#ffffff",
-    marginBottom:10,
+    marginBottom:5,
   },
   name:{
     fontSize:22,

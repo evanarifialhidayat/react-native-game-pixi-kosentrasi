@@ -11,7 +11,7 @@
       "icon": "./asset/logo.png",
     },
     "android"   : {
-      "package" : "com.project.konsentrasi",
+      "package" : "com.konsentrasi.konsentrasi",
       "config"  : {
                   "googleMaps" : {
                     "apiKey" : "AIzaSyBpxloSBAX_j0eGfm-yR50UQoS0CqfwiRo"

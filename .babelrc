@@ -13,7 +13,6 @@
   			"@pages"  : "./src/pages",
   			"@routers": "./src/routers",
   			"@images": "./src/images",
-  			"@signup": "./src/signup",
             "@dasbord": "./src/dasbord",
             "@api": "./src/api",     			
   		 }
