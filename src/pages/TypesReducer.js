@@ -5,7 +5,7 @@ import {
 	TT
 } from '@pages/Types';
 
-import { combineReducers } from "redux";
+//import { combineReducers } from "redux";
 
 const initialState = {
 	isFeaatching : false,
@@ -39,9 +39,9 @@ const tesx = (state = initialStateNew , action) => {
 	}
 };
 
-const globalReducerSatu = combineReducers({  
-  loginValidasi: loginValidasi,
-  x: tesx
-});
+//const globalReducerSatu = combineReducers({  
+// loginValidasi: loginValidasi,
+//  x: tesx
+//});
 
-export default globalReducerSatu;
+//export default globalReducerSatu;

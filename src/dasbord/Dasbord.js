@@ -10,16 +10,16 @@ import Expo, {  AdMobBanner ,
   AdMobRewarded
 } from 'expo';
 const items = [
-  { thumbnail: {  uri : require('@images/circle1.png'   ) , mulai: 'Lavel 1'   ,warna:'#199b01',buuton:'Lavel 1'} },
-  { thumbnail: {  uri : require('@images/circle2.png'   ) , mulai: 'Lavel 2'   ,warna:'#299b02',buuton:'Lavel 2'} },
-  { thumbnail: {  uri : require('@images/circle3.png'   ) , mulai: 'Lavel 3'   ,warna:'#399b03',buuton:'Lavel 3'} },
+  { thumbnail: {  uri : require('@images/circle1.png'   ) , mulai: 'Lavel 1'   ,warna:'#199b01',buuton:'Lavel 1'}},
+  { thumbnail: {  uri : require('@images/circle2.png'   ) , mulai: 'Lavel 2'   ,warna:'#299b02',buuton:'Lavel 2'}},
+  { thumbnail: {  uri : require('@images/circle3.png'   ) , mulai: 'Lavel 3'   ,warna:'#399b03',buuton:'Lavel 3'}},
   { thumbnail: {  uri : require('@images/circle4.png'   ) , mulai: 'Lavel 4'   ,warna:'#499b04',buuton:'Lavel 4'}},
   { thumbnail: {  uri : require('@images/circle5.png'   ) , mulai: 'Lavel 5'   ,warna:'#599b05',buuton:'Lavel 5'}},
   { thumbnail: {  uri : require('@images/circle6.png'   ) , mulai: 'Lavel 6'   ,warna:'#699b06',buuton:'Lavel 6'}},
   { thumbnail: {  uri : require('@images/circle7.png'   ) , mulai: 'Lavel 7'   ,warna:'#799b07',buuton:'Lavel 7'}},
-  { thumbnail: {  uri : require('@images/circle8.png'   ) , mulai: 'Lavel 8'   ,warna:'#899b08',buuton:'Lavel 8'}} ,
+  { thumbnail: {  uri : require('@images/circle8.png'   ) , mulai: 'Lavel 8'   ,warna:'#899b08',buuton:'Lavel 8'}},
   { thumbnail: {  uri : require('@images/circle9.png'   ) , mulai: 'Lavel 9'   ,warna:'#799b09',buuton:'Lavel 9'}},
-  { thumbnail: {  uri : require('@images/circle10.png'   ) , mulai: 'Lavel 10' ,warna:'#799b10',buuton:'Lavel 10'}}
+  { thumbnail: {  uri : require('@images/circle10.png'  ) , mulai: 'Lavel 10'  ,warna:'#799b10',buuton:'Lavel 10'}}
 ];
 
 
@@ -63,7 +63,7 @@ export default class Dasbord extends Component {
           );
    }
  
- async _eventLavel(item){
+ _eventLavel(item){
       if(item === 'Lavel 1'){
          Actions.Lavel1(); 
       } 
@@ -120,39 +120,11 @@ export default class Dasbord extends Component {
               />
         </View>
         <AdMobBanner 
-                			style={{ alignItems: 'center',marginTop: 20 }}
+                		  style={{ alignItems: 'center',marginTop: 20 }}
 		                  bannerSize="banner"
 		                  adUnitID="ca-app-pub-5882049283613214/8700231224"
 		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />
-
-         <AdMobBanner 
-                			style={{ alignItems: 'center'}}
-		                  bannerSize="banner"
-		                  adUnitID="ca-app-pub-5882049283613214/8157305740"
-		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />	
-
-		                  <AdMobBanner 
-                			style={{ alignItems: 'center'}}
-		                  bannerSize="banner"
-		                  adUnitID="ca-app-pub-5882049283613214/4242999513"
-		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />	
-
-		                  <AdMobBanner 
-                			style={{ alignItems: 'center'}}
-		                  bannerSize="banner"
-		                  adUnitID="ca-app-pub-5882049283613214/3668284445"
-		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />	
-
-		                  <AdMobBanner 
-                			style={{ alignItems: 'center'}}
-		                  bannerSize="banner"
-		                  adUnitID="ca-app-pub-5882049283613214/9168023137"
-		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />	
+		                  onDidFailToReceiveAdWithError={this.bannerError} />         
 
      </ImageBackground>
     );

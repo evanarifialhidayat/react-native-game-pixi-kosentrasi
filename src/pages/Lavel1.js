@@ -122,33 +122,12 @@ render(){
 											  }		
 									      />	
 
-					 <AdMobBanner 
-                			style={{ alignItems: 'center',width:Dimensions.get('window').width}}
+ <AdMobBanner 
+                			style={{ alignItems: 'center' , width:Dimensions.get('window').width}}
 		                  bannerSize="banner"
 		                  adUnitID="ca-app-pub-5882049283613214/8157305740"
 		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />	
-
-		                   <AdMobBanner 
-                			style={{ alignItems: 'center'}}
-		                  bannerSize="banner"
-		                  adUnitID="ca-app-pub-5882049283613214/4242999513"
-		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />	
-
-		                  <AdMobBanner 
-                			style={{ alignItems: 'center'}}
-		                  bannerSize="banner"
-		                  adUnitID="ca-app-pub-5882049283613214/3668284445"
-		                  testDeviceID="EMULATOR"
 		                  onDidFailToReceiveAdWithError={this.bannerError} />
-
-		                  <AdMobBanner 
-                			style={{ alignItems: 'center'}}
-		                  bannerSize="banner"
-		                  adUnitID="ca-app-pub-5882049283613214/9168023137"
-		                  testDeviceID="EMULATOR"
-		                  onDidFailToReceiveAdWithError={this.bannerError} />	
 
 		           <ActionButton buttonColor="rgba(231,76,60,1)">
 			          <ActionButton.Item buttonColor='#3498db' title="Home" onPress={() => {this.backHome()}}>
@@ -157,7 +136,8 @@ render(){
 			        </ActionButton>
 
 
-			    </View>			)
+			    </View>			
+			    )
 	}
 }
 
