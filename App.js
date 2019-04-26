@@ -41,7 +41,7 @@ export default class App extends React.Component {
  //   "react-redux": "^5.0.7",
  //   "react-thunk": "^1.0.0",
 //    "redux-thunk": "^2.3.0"
-
+// cek pull
 
 // https://www.bootdey.com/react-native-snippet/9/Login-form-ui-example
 // https://www.npmjs.com/package/react-native-maps
